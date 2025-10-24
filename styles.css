@@ -1,0 +1,65 @@
+:root {
+  --sw-rose: #F7D8E1;
+  --sw-sage: #A8D5BA;
+  --sw-sand: #F4E3C1;
+  --sw-ink: #2D3436;
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, system-ui, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--sw-ink);
+  background: linear-gradient(160deg, var(--sw-rose), var(--sw-sand));
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.25rem;
+  gap: 1.25rem;
+}
+
+.brand .wordmark { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: .02em; margin: .25rem 0 0; }
+.brand .tagline { margin: 0; opacity: .8; }
+
+.message .lead { font-size: clamp(1.25rem, 3.5vw, 1.75rem); margin: .5rem 0; }
+.message .sublead { max-width: 48ch; margin: .25rem auto 0; opacity: .9; }
+
+.contact .email {
+  display: inline-block;
+  margin-top: .75rem;
+  padding: .625rem 1rem;
+  color: var(--sw-ink);
+  background: color-mix(in oklab, white 70%, var(--sw-sage));
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);
+}
+.contact .email:focus {
+  outline: 3px solid color-mix(in oklab, var(--sw-sage) 60%, white);
+  outline-offset: 3px;
+}
+.contact .email:hover { filter: brightness(0.98); }
+
+.footer { margin-top: 2rem; opacity: .7; font-size: .9rem; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+

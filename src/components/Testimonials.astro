@@ -1,0 +1,83 @@
+---
+---
+
+<section class="testimonials">
+  <h2>What parents say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "Learning baby massage gave me so much more confidence in understanding my baby's cues. 
+        It's become a special part of our bedtime routine."
+      </p>
+      <p class="testimonial-author">— Sara, Waiheke Island</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "The classes were so relaxed and supportive. My baby seemed much more settled after we 
+        started the massage routine."
+      </p>
+      <p class="testimonial-author">— Emma, Waiheke Island</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "I loved that both my partner and I could attend. It's something we both do with our baby now, 
+        and it's really strengthened our bond as a family."
+      </p>
+      <p class="testimonial-author">— James, Waiheke Island</p>
+    </div>
+    <div class="testimonial-card">
+      <p class="testimonial-text">
+        "Millie was so patient and understanding when my baby needed to feed or sleep during class. 
+        I never felt pressured, and the techniques really work."
+      </p>
+      <p class="testimonial-author">— Rachel, Waiheke Island</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  .testimonials h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .testimonial-card {
+    background: color-mix(in oklab, white 80%, var(--sw-rose));
+    padding: var(--spacing-lg);
+    border-radius: var(--radius);
+    border: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .testimonial-author {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+

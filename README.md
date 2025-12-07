@@ -1,67 +1,75 @@
-# Small Wonder — Placeholder site
+# Small Wonder — Infant Massage Website
 
-Single-file static site for `smallwonder.nz` hosted on GitHub Pages.
+Full-featured static website for Small Wonder, a baby massage coaching service on Waiheke Island.
 
-## Contents
+## Tech Stack
 
-- `index.html` — minimal accessible page
-- `styles.css` — tiny stylesheet with brand palette
-- `favicon.svg` — simple icon
-- `CNAME` — configured to `smallwonder.nz`
+- **Astro** - Static site generator with TypeScript support
+- **React** - For interactive components (navigation, FAQs, contact form)
+- **Markdown** - Content files for easy editing
+- **GitHub Pages** - Free hosting
 
-## Brand
-
-- Name: Small Wonder
-- Tagline: Baby Massage Coaching
-- Contact: `hello@smallwonder.nz`
-
-## Publish on GitHub Pages (manual)
-
-1. Create a public repo named `smallwonder` under your GitHub account.
-2. Add these files and push to the `main` branch.
-3. In repo Settings → Pages:
-   - Source: `main` branch, `/ (root)`
-   - Custom domain: `smallwonder.nz`
-   - After DNS resolves, tick “Enforce HTTPS”.
-
-### Quickstart commands (optional)
-
-Replace `GITHUB_USER` with your username.
+## Development
 
 ```bash
-# from repo root
-# git init && git add . && git commit -m "Initial placeholder"
-# git remote add origin git@github.com:GITHUB_USER/smallwonder.git
-# git branch -M main && git push -u origin main
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-## DNS on cp.sitehost.nz (manual)
+## Project Structure
 
-Add these records for the zone `smallwonder.nz`:
+```
+/
+├── src/
+│   ├── components/     # Astro and React components
+│   ├── layouts/        # Base layout
+│   ├── pages/          # Pages (index.astro)
+│   ├── content/        # Markdown content files
+│   └── styles/         # Global styles
+├── public/
+│   ├── images/         # Images and placeholders
+│   └── CNAME           # Custom domain config
+└── docs/               # Documentation
+```
 
-Apex `smallwonder.nz` (A):
+## Content
 
-- 185.199.108.153
-- 185.199.109.153
-- 185.199.110.153
-- 185.199.111.153
+Content is stored in markdown files in `src/content/`:
+- `what-is.md` - What is infant massage?
+- `about-practitioner.md` - About Millie
+- `classes.md` - Classes and options
+- `benefits.md` - Benefits in detail
 
-`www.smallwonder.nz` (CNAME):
+Edit these files to update the website content.
 
-- Target: `smallwonder.nz`
+## Images
 
-Optional IPv6 (AAAA) — confirm current values in GitHub Pages docs:
+Placeholder images are in `public/images/` with clear labels indicating what real images should replace them.
 
-- 2606:50c:8000::153
-- 2606:50c:8001::153
-- 2606:50c:8002::153
-- 2606:50c:8003::153
+## Deployment
 
-Propagation may take time. Once GitHub verifies the domain, enable HTTPS in Pages settings.
+The site is configured to deploy to GitHub Pages automatically via GitHub Actions when pushing to the `main` branch.
 
-## Local preview
+1. Push code to GitHub
+2. GitHub Actions will build and deploy automatically
+3. The site will be available at `https://smallwonder.nz`
 
-Open `index.html` in a browser. No build steps.
+## Custom Domain
+
+The `CNAME` file is automatically copied to the build output during the build process to maintain the custom domain configuration.
+
+## Contact Form
+
+The contact form uses Formspree. Update the form endpoint in `src/components/Contact.tsx` with your Formspree form ID after setting up your account.
 
 ## License
 

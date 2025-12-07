@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header';
+import Hero from '../components/Hero.astro';
+import BenefitsSnippet from '../components/BenefitsSnippet.astro';
+import WhatIs from '../components/WhatIs.astro';
+import AboutPractitioner from '../components/AboutPractitioner.astro';
+import Classes from '../components/Classes.astro';
+import Process from '../components/Process.astro';
+import BenefitsDetail from '../components/BenefitsDetail.astro';
+import FAQs from '../components/FAQs';
+import Testimonials from '../components/Testimonials.astro';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout>
+  <Header client:load />
+  <main>
+    <Hero />
+    <BenefitsSnippet />
+    <WhatIs />
+    <AboutPractitioner />
+    <Classes />
+    <Process />
+    <BenefitsDetail />
+    <FAQs client:load />
+    <Testimonials />
+    <Contact client:load />
+  </main>
+  <Footer />
+</BaseLayout>
+

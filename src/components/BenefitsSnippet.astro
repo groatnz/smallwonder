@@ -1,0 +1,73 @@
+---
+---
+
+<section class="benefits-snippet">
+  <div class="benefits-grid">
+    <div class="benefit-item">
+      <div class="benefit-icon">💆</div>
+      <p class="benefit-text">Soothe and settle your baby</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">👶</div>
+      <p class="benefit-text">Understand your baby's cues</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">❤️</div>
+      <p class="benefit-text">Enjoy calm one-to-one time</p>
+    </div>
+  </div>
+  <p class="trust-line">
+    Certified infant massage instructor, running small group classes on Waiheke.
+  </p>
+</section>
+
+<style>
+  .benefits-snippet {
+    padding: var(--spacing-2xl) var(--spacing-md);
+    text-align: center;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .benefit-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .benefit-text {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .trust-line {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin: 0;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .benefits-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
+

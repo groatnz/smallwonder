@@ -1,0 +1,32 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const whatIsPath = join(process.cwd(), 'src', 'content', 'what-is.md');
+const whatIsContent = marked.parse(readFileSync(whatIsPath, 'utf-8'));
+---
+
+<section id="about" class="what-is">
+  <h2>What is infant massage?</h2>
+  <div class="markdown-content" set:html={whatIsContent} />
+  <div class="what-is-cta">
+    <a href="#contact" class="button">Is this right for my baby? Message me</a>
+  </div>
+</section>
+
+<style>
+  .what-is {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  .what-is h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .what-is-cta {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+  }
+</style>

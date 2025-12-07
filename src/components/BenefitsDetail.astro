@@ -1,0 +1,43 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const benefitsPath = join(process.cwd(), 'src', 'content', 'benefits.md');
+const benefitsContent = marked.parse(readFileSync(benefitsPath, 'utf-8'));
+---
+
+<section id="benefits" class="benefits-detail">
+  <h2>Benefits in detail</h2>
+  <div class="markdown-content" set:html={benefitsContent} />
+  <div class="benefits-caveat">
+    <p>
+      Infant massage can be a supportive part of your baby's care, but it doesn't replace medical advice. 
+      If you have health concerns, please speak to your midwife, GP or paediatrician.
+    </p>
+  </div>
+</section>
+
+<style>
+  .benefits-detail {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  .benefits-detail h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .benefits-caveat {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: color-mix(in oklab, white 80%, var(--sw-sage));
+    border-radius: var(--radius);
+    border-left: 4px solid var(--sw-sage);
+  }
+
+  .benefits-caveat p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+</style>

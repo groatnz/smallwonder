@@ -1,0 +1,34 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const classesPath = join(process.cwd(), 'src', 'content', 'classes.md');
+const classesContent = marked.parse(readFileSync(classesPath, 'utf-8'));
+---
+
+<section id="classes" class="classes">
+  <h2>Classes & Options</h2>
+  <div class="markdown-content" set:html={classesContent} />
+  <p class="classes-reassurance">
+    If you're not sure which option suits your family, message me and we'll work it out.
+  </p>
+</section>
+
+<style>
+  .classes {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  .classes h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .classes-reassurance {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+    font-style: italic;
+    opacity: 0.9;
+  }
+</style>

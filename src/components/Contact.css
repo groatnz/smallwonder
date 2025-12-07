@@ -1,0 +1,144 @@
+.contact {
+  padding: var(--spacing-3xl) var(--spacing-md);
+}
+
+.contact h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: var(--spacing-2xl);
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-methods {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target-min);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: color-mix(in oklab, white 70%, var(--sw-sage));
+  border: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--sw-ink);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: filter 0.2s ease;
+}
+
+.contact-button:hover {
+  filter: brightness(0.98);
+  text-decoration: none;
+}
+
+.contact-button:focus {
+  outline: 3px solid color-mix(in oklab, var(--sw-sage) 60%, white);
+  outline-offset: 3px;
+}
+
+.contact-form-wrapper {
+  background: color-mix(in oklab, white 80%, var(--sw-rose));
+  padding: var(--spacing-xl);
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);
+}
+
+.contact-form-wrapper h3 {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  min-height: var(--tap-target-min);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  border: 1px solid color-mix(in oklab, var(--sw-ink) 20%, transparent);
+  border-radius: calc(var(--radius) / 2);
+  background: white;
+  color: var(--sw-ink);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 3px solid color-mix(in oklab, var(--sw-sage) 60%, white);
+  outline-offset: 2px;
+  border-color: var(--sw-sage);
+}
+
+.form-message {
+  padding: var(--spacing-md);
+  border-radius: calc(var(--radius) / 2);
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-success {
+  background: color-mix(in oklab, var(--sw-sage) 20%, white);
+  color: var(--sw-ink);
+}
+
+.form-error {
+  background: color-mix(in oklab, var(--sw-rose) 30%, white);
+  color: var(--sw-ink);
+}
+
+.contact button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .contact-buttons {
+    flex-direction: row;
+  }
+
+  .contact-button {
+    flex: 1;
+  }
+}
+

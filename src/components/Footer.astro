@@ -1,0 +1,28 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <p>&copy; {currentYear} Small Wonder</p>
+  <p class="footer-tagline">Baby Massage Coaching - Waiheke Island</p>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    border-top: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);
+    margin-top: var(--spacing-2xl);
+  }
+
+  .footer p {
+    margin: var(--spacing-xs) 0;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+  }
+</style>
+

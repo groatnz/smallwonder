@@ -1,0 +1,103 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const aboutPath = join(process.cwd(), 'src', 'content', 'about-practitioner.md');
+const aboutContent = marked.parse(readFileSync(aboutPath, 'utf-8'));
+---
+
+<section class="about-practitioner">
+  <div class="about-content">
+    <div class="about-image">
+      <img 
+        src="/images/practitioner-placeholder.svg" 
+        alt="Millie, certified infant massage instructor"
+        loading="lazy"
+        width="400"
+        height="400"
+      />
+    </div>
+    <div class="about-text">
+      <h2>About Millie</h2>
+      <div class="markdown-content" set:html={aboutContent} />
+      <div class="credentials">
+        <h3>Credentials</h3>
+        <ul>
+          <li>Certified Infant Massage Instructor (CIMI) - IAIM</li>
+          <li>First Aid / CPR certified</li>
+        </ul>
+      </div>
+      <div class="about-cta">
+        <a href="#contact" class="button">Any questions about my training or approach? Get in touch.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-practitioner {
+    padding: var(--spacing-3xl) var(--spacing-md);
+  }
+
+  .about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    align-items: start;
+  }
+
+  .about-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-text h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .credentials {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: color-mix(in oklab, white 80%, var(--sw-rose));
+    border-radius: var(--radius);
+  }
+
+  .credentials h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+  }
+
+  .credentials ul {
+    margin: 0;
+    padding-left: var(--spacing-xl);
+  }
+
+  .credentials li {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .about-cta {
+    margin-top: var(--spacing-xl);
+  }
+
+  @media (min-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    .about-image {
+      margin: 0;
+    }
+  }
+</style>

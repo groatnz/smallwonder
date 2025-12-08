@@ -4,6 +4,8 @@ import './Contact.css';
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
+    email: '',
+    phone: '',
     babyAge: '',
     contactMethod: 'email',
     message: ''
@@ -24,18 +26,38 @@ export default function Contact() {
     setSubmitStatus('idle');
 
     try {
-      // Formspree endpoint - replace with actual endpoint after setup
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Web3Forms endpoint - get your access key from https://web3forms.com
+      // Replace YOUR_ACCESS_KEY with your actual access key
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: '2257fef1-5cc8-4b5d-b06b-73f900fe2cac', // Replace with your Web3Forms access key
+          subject: `New contact from ${formData.name} - Small Wonder`,
+          from_name: formData.name,
+          email: formData.email || 'not provided',
+          phone: formData.phone || 'not provided',
+          babyAge: formData.babyAge || 'not provided',
+          contactMethod: formData.contactMethod,
+          message: formData.message,
+        }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setSubmitStatus('success');
-        setFormData({ name: '', babyAge: '', contactMethod: 'email', message: '' });
+        setFormData({ 
+          name: '', 
+          email: '', 
+          phone: '',
+          babyAge: '', 
+          contactMethod: 'email', 
+          message: '' 
+        });
       } else {
         setSubmitStatus('error');
       }
@@ -46,6 +68,9 @@ export default function Contact() {
     }
   };
 
+  const showEmailField = formData.contactMethod === 'email';
+  const showPhoneField = formData.contactMethod === 'phone' || formData.contactMethod === 'whatsapp';
+
   return (
     <section id="contact" className="contact">
       <h2>Get in touch</h2>
@@ -55,10 +80,10 @@ export default function Contact() {
       
       <div className="contact-methods">
         <div className="contact-buttons">
-          <a href="tel:+64XXXXXXXXX" className="contact-button">
+          <a href="tel:+64275480312" className="contact-button">
             📞 Call
           </a>
-          <a href="sms:+64XXXXXXXXX" className="contact-button">
+          <a href="sms:+64275480312" className="contact-button">
             💬 Text / WhatsApp
           </a>
           <a href="mailto:millie@smallwonder.nz" className="contact-button">
@@ -83,18 +108,6 @@ export default function Contact() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="babyAge">Baby's age (optional)</label>
-              <input
-                type="text"
-                id="babyAge"
-                name="babyAge"
-                value={formData.babyAge}
-                onChange={handleChange}
-                placeholder="e.g., 3 months"
-              />
-            </div>
-
-            <div className="form-group">
               <label htmlFor="contactMethod">Preferred contact method</label>
               <select
                 id="contactMethod"
@@ -107,6 +120,48 @@ export default function Contact() {
                 <option value="phone">Phone</option>
                 <option value="whatsapp">WhatsApp</option>
               </select>
+            </div>
+
+            {showEmailField && (
+              <div className="form-group">
+                <label htmlFor="email">Your email address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required={showEmailField}
+                  placeholder="your.email@example.com"
+                />
+              </div>
+            )}
+
+            {showPhoneField && (
+              <div className="form-group">
+                <label htmlFor="phone">Your phone number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required={showPhoneField}
+                  placeholder="e.g., +64 21 123 4567"
+                />
+              </div>
+            )}
+
+            <div className="form-group">
+              <label htmlFor="babyAge">Baby's age (optional)</label>
+              <input
+                type="text"
+                id="babyAge"
+                name="babyAge"
+                value={formData.babyAge}
+                onChange={handleChange}
+                placeholder="e.g., 3 months"
+              />
             </div>
 
             <div className="form-group">
@@ -143,4 +198,3 @@ export default function Contact() {
     </section>
   );
 }
-

@@ -44,6 +44,7 @@ npm run preview
 ## Content
 
 Content is stored in markdown files in `src/content/`:
+
 - `what-is.md` - What is infant massage?
 - `about-practitioner.md` - About Millie
 - `classes.md` - Classes and options
@@ -69,7 +70,9 @@ The `CNAME` file is automatically copied to the build output during the build pr
 
 ## Contact Form
 
-The contact form uses Formspree. Update the form endpoint in `src/components/Contact.tsx` with your Formspree form ID after setting up your account.
+The contact form uses Web3Forms. See `docs/form-setup.md` for setup instructions. You'll need to:
+1. Get a free access key from [web3forms.com](https://web3forms.com)
+2. Replace `YOUR_ACCESS_KEY` in `src/components/Contact.tsx` with your actual key
 
 ## License
 

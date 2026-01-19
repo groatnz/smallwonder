@@ -9,12 +9,20 @@ const benefitsContent = marked.parse(readFileSync(benefitsPath, 'utf-8'));
 
 <section id="benefits" class="benefits-detail">
   <h2>Benefits in detail</h2>
-  <div class="markdown-content" set:html={benefitsContent} />
-  <div class="benefits-caveat">
-    <p>
-      Infant massage can be a supportive part of your baby's care, but it doesn't replace medical advice. 
-      If you have health concerns, please speak to your midwife, GP or paediatrician.
-    </p>
+  <div class="benefits-content">
+    <div class="benefits-text">
+      <div class="markdown-content" set:html={benefitsContent} />
+      <div class="benefits-caveat">
+        <p>
+          Infant massage can be a supportive part of your baby's care, but it doesn't replace medical advice. 
+          If you have health concerns, please speak to your midwife, GP or paediatrician.
+        </p>
+      </div>
+    </div>
+    <div class="benefits-illustration">
+      <!-- Illustration space - add image here when ready -->
+
+    </div>
   </div>
 </section>
 
@@ -25,7 +33,43 @@ const benefitsContent = marked.parse(readFileSync(benefitsPath, 'utf-8'));
 
   .benefits-detail h2 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .benefits-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+  }
+
+  .benefits-text {
+    order: 1;
+  }
+
+  .benefits-illustration {
+    order: 2;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .illustration-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in oklab, white 90%, var(--sw-rose));
+    border-radius: var(--radius);
+    color: var(--sw-ink);
+  }
+
+  .illustration-placeholder svg {
+    width: 80%;
+    height: 80%;
   }
 
   .benefits-caveat {
@@ -39,5 +83,21 @@ const benefitsContent = marked.parse(readFileSync(benefitsPath, 'utf-8'));
   .benefits-caveat p {
     margin: 0;
     font-size: 0.95rem;
+  }
+
+  @media (min-width: 768px) {
+    .benefits-content {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+    }
+
+    .benefits-text {
+      order: 1;
+    }
+
+    .benefits-illustration {
+      order: 2;
+      margin: 0;
+    }
   }
 </style>

@@ -15,7 +15,7 @@
 - Follow-up support via email
 - Opportunity to connect with other parents
 
-**CTA:** [Enquire about this course](#contact)
+[Enquire about this course](#contact)
 
 ---
 
@@ -35,7 +35,7 @@
 - Written notes and handouts
 - Follow-up support
 
-**CTA:** [Check availability](#contact)
+[Check availability](#contact)
 
 ---
 

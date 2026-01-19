@@ -56,12 +56,14 @@
   }
 
   .trust-line {
-    font-size: 0.95rem;
-    opacity: 0.8;
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-style: italic;
     margin: 0;
     max-width: 65ch;
     margin-left: auto;
     margin-right: auto;
+    margin-top: var(--spacing-lg);
+    line-height: 1.6;
   }
 
   @media (min-width: 768px) {

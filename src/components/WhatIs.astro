@@ -9,9 +9,20 @@ const whatIsContent = marked.parse(readFileSync(whatIsPath, 'utf-8'));
 
 <section id="about" class="what-is">
   <h2>What is infant massage?</h2>
-  <div class="markdown-content" set:html={whatIsContent} />
-  <div class="what-is-cta">
-    <a href="#contact" class="button">Is this right for my baby? Message me</a>
+  <div class="what-is-content">
+    <div class="what-is-text">
+      <div class="markdown-content" set:html={whatIsContent} />
+      <div class="what-is-cta">
+        <a href="#contact" class="button">Is this right for my baby? Message me</a>
+      </div>
+    </div>
+    <div class="what-is-illustration">
+      <img 
+        src="/images/parent-bonding.png" 
+        alt="Parent gently bonding with baby during massage" 
+        class="what-is-image"
+      />
+    </div>
   </div>
 </section>
 
@@ -22,11 +33,54 @@ const whatIsContent = marked.parse(readFileSync(whatIsPath, 'utf-8'));
 
   .what-is h2 {
     text-align: center;
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .what-is-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+  }
+
+  .what-is-text {
+    order: 1;
+  }
+
+  .what-is-illustration {
+    order: 2;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .what-is-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    object-fit: cover;
   }
 
   .what-is-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
+  }
+
+  @media (min-width: 768px) {
+    .what-is-content {
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--spacing-3xl);
+    }
+
+    .what-is-text {
+      order: 1;
+    }
+
+    .what-is-illustration {
+      order: 2;
+      margin: 0;
+    }
   }
 </style>

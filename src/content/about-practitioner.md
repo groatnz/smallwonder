@@ -6,3 +6,4 @@ Millie's approach is warm, patient, and completely baby-led. She believes that e
 
 Whether you're feeling confident or overwhelmed, whether your baby is calm or colicky, Millie creates a safe, non-judgmental space where you can learn at your own pace and your baby's pace.
 
+Millie also has experience as an Adult massage practitioner, Chi Ne Tsong & Jade Woman practices. 

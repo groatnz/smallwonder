@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "dev:share": "npm run build && concurrently -n \"preview,ngrok\" -c \"blue,green\" \"npm run preview\" \"bash scripts/start-ngrok.sh\"",
     "prebuild": "node scripts/copy-cname.js",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,6 +22,8 @@
   "devDependencies": {
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.5.3"
+    "concurrently": "^8.2.2",
+    "typescript": "^5.5.3",
+    "wait-on": "^7.2.0"
   }
 }

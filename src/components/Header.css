@@ -19,10 +19,19 @@
 .logo {
   text-decoration: none;
   color: var(--sw-ink);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
 .logo:hover {
   text-decoration: none;
+}
+
+.logo-image {
+  height: 4rem;
+  width: auto;
+  display: block;
 }
 
 .wordmark {

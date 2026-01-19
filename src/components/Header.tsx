@@ -24,6 +24,11 @@ export default function Header() {
     <header className="header" role="banner">
       <div className="header-container">
         <a href="#home" className="logo" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+          <img 
+            src="/images/logo-hand.svg" 
+            alt="Small Wonder - Baby massage logo" 
+            className="logo-image"
+          />
           <h1 className="wordmark">Small Wonder</h1>
         </a>
         

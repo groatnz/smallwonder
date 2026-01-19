@@ -1,0 +1,39 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for depth and softness -->
+    <radialGradient id="sageGradient" cx="40%" cy="40%">
+      <stop offset="0%" style="stop-color:#A8D5BA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8FC4A3;stop-opacity:0.85" />
+    </radialGradient>
+    
+    <radialGradient id="roseGradient" cx="60%" cy="60%">
+      <stop offset="0%" style="stop-color:#F7D8E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F4C4D4;stop-opacity:0.85" />
+    </radialGradient>
+  </defs>
+  
+  <!-- First interlocking shape (sage green) - represents parent -->
+  <!-- Left side flows around, right side curves inward -->
+  <path d="M 100 15 
+           C 50 20, 15 60, 15 100
+           C 15 140, 50 180, 100 185
+           C 120 185, 140 180, 155 170
+           C 170 155, 180 130, 180 100
+           C 180 70, 170 45, 155 30
+           C 140 20, 120 15, 100 15 Z" 
+        fill="url(#sageGradient)"/>
+  
+  <!-- Second interlocking shape (soft rose) - represents baby -->
+  <!-- Right side flows around, left side curves inward to interlock -->
+  <path d="M 100 25
+           C 150 30, 185 70, 185 100
+           C 185 130, 150 170, 100 175
+           C 80 175, 60 170, 45 160
+           C 30 145, 20 120, 20 100
+           C 20 70, 30 45, 45 30
+           C 60 20, 80 25, 100 25 Z" 
+        fill="url(#roseGradient)"/>
+  
+  <!-- Subtle outer circle for definition (optional) -->
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#F4E3C1" stroke-width="1" opacity="0.3"/>
+</svg>

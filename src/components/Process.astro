@@ -3,34 +3,40 @@
 
 <section class="process">
   <h2>How it works</h2>
-  <div class="process-timeline">
-    <div class="process-step">
-      <div class="step-number">1</div>
-      <div class="step-content">
-        <h3>We chat first</h3>
-        <p>You tell me about your baby and any special considerations.</p>
+  <div class="process-content">
+    <div class="process-timeline">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>We chat first</h3>
+          <p>You tell me about your baby and any special considerations.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Come as you are</h3>
+          <p>We meet in a warm, relaxed space; babies can feed, cry, sleep.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>You learn at your baby's pace</h3>
+          <p>I demonstrate on a doll; you massage your baby only when they're happy to.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>You take it home</h3>
+          <p>You get notes/oil and keep practising the routine in your own time.</p>
+        </div>
       </div>
     </div>
-    <div class="process-step">
-      <div class="step-number">2</div>
-      <div class="step-content">
-        <h3>Come as you are</h3>
-        <p>We meet in a warm, relaxed space; babies can feed, cry, sleep.</p>
-      </div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">3</div>
-      <div class="step-content">
-        <h3>You learn at your baby's pace</h3>
-        <p>I demonstrate on a doll; you massage your baby only when they're happy to.</p>
-      </div>
-    </div>
-    <div class="process-step">
-      <div class="step-number">4</div>
-      <div class="step-content">
-        <h3>You take it home</h3>
-        <p>You get notes/oil and keep practising the routine in your own time.</p>
-      </div>
+    <div class="process-illustration">
+      <!-- Illustration space - add image here when ready -->
+      
     </div>
   </div>
   <p class="process-note">
@@ -48,13 +54,46 @@
     margin-bottom: var(--spacing-2xl);
   }
 
+  .process-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+  }
+
   .process-timeline {
+    order: 1;
     max-width: 800px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     position: relative;
+  }
+
+  .process-illustration {
+    order: 2;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .illustration-placeholder {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in oklab, white 90%, var(--sw-sand));
+    border-radius: var(--radius);
+    color: var(--sw-ink);
+  }
+
+  .illustration-placeholder svg {
+    width: 80%;
+    height: 80%;
   }
 
   .process-step {
@@ -91,9 +130,26 @@
     margin-top: var(--spacing-xl);
     font-style: italic;
     opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   @media (min-width: 768px) {
+    .process-content {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .process-timeline {
+      order: 1;
+      margin: 0;
+    }
+
+    .process-illustration {
+      order: 2;
+      margin: 0;
+    }
+
     .process-timeline {
       gap: var(--spacing-2xl);
     }

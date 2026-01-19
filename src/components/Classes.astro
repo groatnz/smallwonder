@@ -3,6 +3,19 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { marked } from 'marked';
 
+// Configure marked with custom link renderer to add button class
+marked.use({
+  renderer: {
+    link(href, title, text) {
+      // Add button class to CTA links
+      if (text.includes('Enquire') || text.includes('Check availability')) {
+        return `<a href="${href}" class="button"${title ? ` title="${title}"` : ''}>${text}</a>`;
+      }
+      return `<a href="${href}"${title ? ` title="${title}"` : ''}>${text}</a>`;
+    }
+  }
+});
+
 const classesPath = join(process.cwd(), 'src', 'content', 'classes.md');
 const classesContent = marked.parse(readFileSync(classesPath, 'utf-8'));
 ---

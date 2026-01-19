@@ -10,5 +10,19 @@ export default defineConfig({
   build: {
     assets: 'assets',
   },
+  preview: {
+    host: true,
+    port: 4321,
+  },
+  vite: {
+    preview: {
+      host: true,
+      allowedHosts: [
+        '.ngrok-free.app',
+        '.ngrok.app',
+        '.ngrok.io',
+      ],
+    },
+  },
 });
 

@@ -6,12 +6,12 @@
   --radius: 12px;
   
   /* Typography */
-  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
-  --font-size-base: clamp(16px, 2vw, 18px);
-  --font-size-h1: clamp(2rem, 5vw, 3rem);
-  --font-size-h2: clamp(1.5rem, 4vw, 2.25rem);
-  --font-size-h3: clamp(1.25rem, 3vw, 1.75rem);
-  --font-size-lead: clamp(1.25rem, 3.5vw, 1.75rem);
+  --font-base: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, system-ui, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --font-size-base: clamp(18px, 2.5vw, 20px);
+  --font-size-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --font-size-h2: clamp(2rem, 5vw, 3.5rem);
+  --font-size-h3: clamp(1.5rem, 4vw, 2.25rem);
+  --font-size-lead: clamp(1.375rem, 4vw, 2rem);
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -40,6 +40,7 @@ body {
   margin: 0;
   font-family: var(--font-base);
   font-size: var(--font-size-base);
+  font-weight: 300;
   line-height: 1.6;
   color: var(--sw-ink);
   background: linear-gradient(160deg, var(--sw-rose), var(--sw-sand));
@@ -51,18 +52,20 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 var(--spacing-md) 0;
-  font-weight: 600;
+  margin: 0 0 var(--spacing-lg) 0;
+  font-weight: 300;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 h1 {
   font-size: var(--font-size-h1);
-  letter-spacing: 0.02em;
+  letter-spacing: -0.02em;
 }
 
 h2 {
   font-size: var(--font-size-h2);
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -70,7 +73,8 @@ h3 {
 }
 
 p {
-  margin: 0 0 var(--spacing-md) 0;
+  margin: 0 0 var(--spacing-lg) 0;
+  line-height: 1.7;
 }
 
 a {
@@ -84,7 +88,7 @@ a:hover {
 
 /* Sections */
 section {
-  padding: var(--spacing-2xl) var(--spacing-md);
+  padding: var(--spacing-3xl) var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
@@ -97,6 +101,12 @@ section {
   }
 }
 
+@media (min-width: 1024px) {
+  section {
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+  }
+}
+
 /* Buttons and CTAs */
 button,
 .button,
@@ -106,6 +116,7 @@ a.button {
   padding: var(--spacing-sm) var(--spacing-lg);
   font-size: var(--font-size-base);
   font-family: inherit;
+  font-weight: 400;
   color: var(--sw-ink);
   background: color-mix(in oklab, white 70%, var(--sw-sage));
   border: 1px solid color-mix(in oklab, var(--sw-ink) 10%, transparent);

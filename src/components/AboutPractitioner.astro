@@ -21,13 +21,6 @@ const aboutContent = marked.parse(readFileSync(aboutPath, 'utf-8'));
     <div class="about-text">
       <h2>About Millie</h2>
       <div class="markdown-content" set:html={aboutContent} />
-      <div class="credentials">
-        <h3>Credentials</h3>
-        <ul>
-          <li>Certified Infant Massage Instructor (CIMI) - IAIM</li>
-          <li>First Aid / CPR certified</li>
-        </ul>
-      </div>
       <div class="about-cta">
         <a href="#contact" class="button">Any questions about my training or approach? Get in touch.</a>
       </div>

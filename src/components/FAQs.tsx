@@ -15,22 +15,22 @@ const faqs: FAQ[] = [
     question: "What if my baby cries or sleeps during class?",
     answer: "That's completely normal! Babies have their own rhythms and needs. We adapt to whatever your baby is doing. If they're sleeping, we can discuss techniques. If they're crying, we pause and wait. The massage is always baby-led and respectful of their cues."
   },
-  {
-    question: "Can both parents come?",
-    answer: "Absolutely! Both parents, partners, or primary caregivers are welcome. It's wonderful when both parents learn the techniques together. Just let me know when you book so I can ensure we have space."
-  },
+  // {
+  //   question: "Can both parents come?",
+  //   answer: "Absolutely! Both parents, partners, or primary caregivers are welcome. It's wonderful when both parents learn the techniques together. Just let me know when you book so I can ensure we have space."
+  // },
   {
     question: "What do I need to bring?",
-    answer: "Just bring your baby, a change of clothes, and any feeding supplies you might need. I provide the massage oil and all materials. Wear comfortable clothes that you don't mind getting a bit of oil on."
+    answer: "Just bring your baby, a change of clothes, and any feeding supplies you might need..Wear comfortable clothes that you don't mind getting a bit of oil on."
   },
   {
     question: "What if my baby has reflux/colic or a medical condition?",
-    answer: "Infant massage can be adapted for babies with various conditions, but it's important to discuss this with me first. I'll work with you and may recommend checking with your healthcare provider to ensure massage is appropriate. Some techniques can actually help with digestive discomfort when done correctly."
+    answer: "check with your healthcare provider to ensure massage is appropriate. Massage strokes can be adapted to suit individual baby's needs."
   },
-  {
-    question: "What oil do you use? Can I use my own?",
-    answer: "I use a gentle, natural oil suitable for babies' sensitive skin (typically a light, cold-pressed vegetable oil). If your baby has sensitive skin or you prefer a specific oil, we can discuss alternatives. It's important to avoid oils with fragrances or additives that might irritate delicate skin."
-  }
+  // {
+  //   question: "What oil do you use? Can I use my own?",
+  //   answer: "We recommend, natural oil suitable for babies' sensitive skin (typically a light, cold-pressed vegetable oil). If your baby has sensitive skin or you prefer a specific oil, we can discuss alternatives. It's important to avoid oils with fragrances or additives that might irritate delicate skin."
+  // }
 ];
 
 export default function FAQs() {

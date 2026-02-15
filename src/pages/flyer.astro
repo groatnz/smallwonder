@@ -1,0 +1,496 @@
+---
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { marked } from 'marked';
+
+const trainingPath = join(process.cwd(), 'src', 'content', 'training.md');
+const trainingContent = readFileSync(trainingPath, 'utf-8');
+const parsedContent = marked.parse(trainingContent);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Infant Massage Classes - Small Wonder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="flyer">
+      <!-- Header with logo/branding -->
+      <header class="flyer-header">
+        <div class="logo-area">
+          <img src="/images/logo-hand.svg" alt="Small Wonder Logo" class="header-logo" />
+          <div class="header-text">
+            <h1>Small Wonder</h1>
+            <p class="tagline">Baby Massage Coaching on Waiheke Island</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main announcement banner -->
+      <div class="announcement-banner">
+        <h2>Infant Massage Classes</h2>
+        <p class="subtitle">For New Parents</p>
+      </div>
+
+      <!-- Content area with image and details -->
+      <div class="flyer-content">
+        <div class="image-section">
+          <img 
+            src="/images/millie-serene.png" 
+            alt="Millie, certified infant massage instructor"
+          />
+          <div class="credentials-badge">
+            <p><strong>Millie Watkins</strong></p>
+            <p class="small">International Association of Infant Massage</p>
+          </div>
+        </div>
+
+        <div class="details-section">
+          <div class="intro-text">
+            <p>I'm excited to offer <strong>free infant massage classes</strong> to parents with babies as part of my International Association of Infant Massage certification process.</p>
+            
+            <p>Having completed my training with IAIM, I'm now looking for parents who would like to participate in complimentary massage sessions.</p>
+          </div>
+
+          <div class="benefits-box">
+            <h3>What You'll Gain:</h3>
+            <ul>
+              <li>Professional instruction in infant massage techniques</li>
+              <li>Quality bonding time with your baby</li>
+              <li>A supportive group environment with other new parents</li>
+              <li>All materials and guidance provided free of charge</li>
+            </ul>
+          </div>
+
+          <div class="value-prop">
+            <p><strong>A win-win opportunity:</strong> You receive expert infant massage instruction at no cost, and I gain the practical experience needed to complete my certification.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact section with tear-off strips -->
+      <footer class="flyer-footer">
+        <div class="contact-main">
+          <h3>Interested? Get in Touch!</h3>
+          <div class="contact-details">
+            <p class="contact-item"><strong>Email:</strong> millie@smallwonder.nz</p>
+            <p class="contact-item"><strong>Website:</strong> smallwonder.nz</p>
+            <p class="contact-item"><strong>Location:</strong> Waiheke Island</p>
+          </div>
+        </div>
+
+        <!-- Tear-off strips -->
+        <div class="tear-off-container">
+          <div class="tear-line"></div>
+          <div class="tear-strips">
+            {[...Array(10)].map(() => (
+              <div class="tear-strip">
+                <p class="strip-title">Infant Massage</p>
+                <p class="strip-contact">millie@smallwonder.nz</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: #2D3436;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .flyer {
+    width: 148mm; /* A5 width */
+    min-height: 210mm; /* A5 height */
+    margin: 0 auto;
+    background: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  .flyer-header {
+    background: #F7D8E1;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid #A8D5BA;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .header-logo {
+    height: 40px;
+    width: auto;
+  }
+
+  .header-text {
+    text-align: left;
+  }
+
+  .logo-area h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2D3436;
+    margin: 0 0 2px 0;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .tagline {
+    font-size: 11px;
+    font-weight: 400;
+    color: #2D3436;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+  /* Announcement Banner */
+  .announcement-banner {
+    background: #A8D5BA;
+    padding: 20px 15px;
+    text-align: center;
+    position: relative;
+  }
+
+  .announcement-banner::before,
+  .announcement-banner::after {
+    content: '✦';
+    position: absolute;
+    font-size: 20px;
+    color: #2D3436;
+    opacity: 0.3;
+  }
+
+  .announcement-banner::before {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .announcement-banner::after {
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .announcement-banner h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2D3436;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    margin: 4px 0 0 0;
+    color: #2D3436;
+  }
+
+  /* Content Area */
+  .flyer-content {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+  }
+
+  .image-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .image-section img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid #F7D8E1;
+  }
+
+  .credentials-badge {
+    background: #A8D5BA;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #F7D8E1;
+  }
+
+  .credentials-badge strong {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .credentials-badge .small {
+    font-size: 9px;
+    opacity: 0.8;
+    line-height: 1.3;
+  }
+
+  .details-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .intro-text {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .intro-text p {
+    margin-bottom: 8px;
+  }
+
+  .intro-text strong {
+    font-weight: 600;
+    color: #2D3436;
+  }
+
+  .benefits-box {
+    background: #F7D8E1;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #A8D5BA;
+  }
+
+  .benefits-box h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2D3436;
+  }
+
+  .benefits-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .benefits-box li {
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 6px;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .benefits-box li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #A8D5BA;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .value-prop {
+    background: #A8D5BA;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 10px;
+    line-height: 1.4;
+    border: 2px solid #F7D8E1;
+  }
+
+  .value-prop p {
+    margin: 0;
+  }
+
+  .value-prop strong {
+    font-weight: 600;
+  }
+
+  /* Footer Contact */
+  .flyer-footer {
+    background: white;
+    color: #2D3436;
+    padding: 10px 15px 0 15px;
+    border-top: 2px solid #F7D8E1;
+  }
+
+  .contact-main {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .contact-main h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 9px;
+  }
+
+  .contact-item {
+    font-size: 9px;
+    margin: 0;
+  }
+
+  .contact-item strong {
+    font-weight: 600;
+  }
+
+  /* Tear-off strips */
+  .tear-off-container {
+    margin-top: 8px;
+    padding-bottom: 6px;
+  }
+
+  .tear-line {
+    border-top: 1px dashed rgba(45, 52, 54, 0.3);
+    margin-bottom: 4px;
+  }
+
+  .tear-strips {
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+    padding-top: 4px;
+  }
+
+  .tear-strip {
+    background: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding: 8px 3px;
+    text-align: center;
+    border: 1px dashed #A8D5BA;
+    border-radius: 2px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .strip-title {
+    font-size: 7px;
+    font-weight: 700;
+    color: #2D3436;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .strip-contact {
+    font-size: 7px;
+    font-weight: 500;
+    color: #2D3436;
+    margin: 0;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+  }
+
+  /* Print styles */
+  @page {
+    size: A5 portrait;
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 148mm;
+      height: 210mm;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .flyer {
+      width: 148mm;
+      height: 210mm;
+      min-height: 210mm;
+      max-height: 210mm;
+      margin: 0;
+      page-break-after: avoid;
+      page-break-before: avoid;
+      page-break-inside: avoid;
+    }
+
+    .flyer-header,
+    .announcement-banner,
+    .benefits-box,
+    .value-prop,
+    .flyer-footer,
+    .tear-strip,
+    .credentials-badge {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      color-adjust: exact;
+    }
+
+    .flyer-content {
+      page-break-inside: avoid;
+    }
+
+    .tear-strips {
+      page-break-inside: avoid;
+    }
+
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+
+  /* Screen responsive adjustments */
+  @media screen and (max-width: 148mm) {
+    .flyer {
+      width: 100%;
+      min-height: auto;
+    }
+
+    .flyer-content {
+      grid-template-columns: 1fr;
+    }
+
+    .tear-strips {
+      flex-wrap: wrap;
+    }
+
+    .tear-strip {
+      min-width: 40px;
+    }
+  }
+</style>

@@ -18,7 +18,12 @@
       </p>
       <p class="hero-subheading">
       Certified infant massage instructor, running small group classes on Waiheke.
-      </p>      
+      </p>
+      
+      <div class="hero-certification">
+        <img src="/images/logo-IAIM-transparent.png" alt="IAIM Certified" class="hero-iaim-logo" />
+        <p class="certification-text">Certified by International Association of Infant Massage</p>
+      </div>
     
       <div class="hero-ctas">
         <a href="#contact" class="button button-primary">Message Millie</a>
@@ -128,13 +133,36 @@
 
   .hero-subheading {
     font-size: clamp(1.25rem, 3.5vw, 2rem);
-    margin-bottom: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
     opacity: 0.95;
     max-width: 70ch;
     margin-left: auto;
     margin-right: auto;
     line-height: 1.4;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-certification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+  }
+
+  .hero-iaim-logo {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  }
+
+  .certification-text {
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    margin: 0;
+    max-width: 20ch;
+    line-height: 1.3;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
   }
 
   .hero-ctas {
@@ -166,6 +194,22 @@
   .button-secondary:hover {
     background: color-mix(in oklab, white 90%, var(--sw-rose));
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 767px) {
+    .hero-certification {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
+
+    .hero-iaim-logo {
+      height: 48px;
+    }
+
+    .certification-text {
+      text-align: center;
+      max-width: 30ch;
+    }
   }
 
   @media (min-width: 768px) {
